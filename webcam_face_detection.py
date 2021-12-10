@@ -1,13 +1,13 @@
 import cv2
 
 
-# Import a Video
-video_str = "video.mkv"
-
 # Classifier file contains a pre-modelled algorithm
 classifier_file = "frontal_face.xml"
 
-video = cv2.VideoCapture(video_str)
+# camera index, test to check which of your cameras available you want to use
+# Could be 0,1,2,etc
+camera_index = 1
+video = cv2.VideoCapture(camera_index)
 
 face_classifier = cv2.CascadeClassifier(classifier_file)
 
@@ -16,8 +16,11 @@ while True:
     # Capture the frames of the video
     (success, frame) = video.read()
 
-    # convert frame to gray
-    grayed_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    if success == True:
+        # convert frame to gray
+        grayed_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    else:
+        break
 
     face_coordinates = face_classifier.detectMultiScale(grayed_frame)
 
@@ -27,7 +30,7 @@ while True:
 
     # showing the face detector app
     cv2.imshow('Danny Face Detector', frame)
-    
+
     # wait for Q key which has its ascii code as 81 or 113
     # stop the program
     key = cv2.waitKey(1)
