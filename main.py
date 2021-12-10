@@ -2,7 +2,7 @@ import cv2
 
 
 # Import an Image
-img_str = "danny.jpeg"
+img_str = "./dummy_faces/face1.jpeg"
 
 # Classifier file contains a pre-modelled algorithm
 classifier_file = "frontal_face.xml"
@@ -17,7 +17,7 @@ face_coordinates = face_classifier.detectMultiScale(grayed_img)
 (x, y, w, h) = face_coordinates[0]
 
 #Drawing the rectangle on the image
-cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 10)
+cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 5)
 
 #showing the face detector app
 cv2.imshow('Danny Face Detector', img)
