@@ -24,5 +24,4 @@ cv2.imshow('Danny Face Detector', img)
 
 cv2.waitKey()
 
-
 print("Program finished successfully")
