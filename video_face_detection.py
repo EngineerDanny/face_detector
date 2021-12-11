@@ -34,5 +34,5 @@ while True:
     if key == 81 or key == 113:
         break
 
-
+video.release()
 print("Program finished successfully")
