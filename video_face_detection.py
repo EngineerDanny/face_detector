@@ -12,6 +12,8 @@ video = cv2.VideoCapture(video_str)
 face_classifier = cv2.CascadeClassifier(classifier_file)
 
 
+
+
 while True:
     # Capture the frames of the video
     (success, frame) = video.read()
