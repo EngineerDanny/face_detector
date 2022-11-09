@@ -1,4 +1,4 @@
-# FaceDetector
+# face_detector
 
 FaceDetector App built with python and openCV.
 
